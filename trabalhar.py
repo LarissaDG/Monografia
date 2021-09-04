@@ -2,6 +2,7 @@ import bpy
 import random
 import numpy as np
 
+context = bpy.context
 #Variaveis globais
 espaco = 2
 largura = 10
@@ -29,12 +30,24 @@ def salva_param(tabuleiro):
     file = open(r"C:\Users\lalad\Documents\Blender\input.txt","w")
     file.write(aux_text)
     file.close()
-    
+
 def desenha_tabuleiro(tabuleiro):
+    
+    #mat = bpy.data.materials[-1]
+    #bpy.data.materials["Materiais"].node_tree.nodes["BSDF - Polimento"].inputs[1].default_value = 0.15
+    #bpy.data.materials["Materiais"].node_tree.nodes["BSDF - Polimento"].inputs[0].default_value = (0.8, 0.8, 0.8, 1)
+    #bpy.data.materials["Materiais"].node_tree.nodes["BSDF - Polimento"].inputs[0].default_value = (0.701102, 0.376262, 0.0144439, 1)
     for x in range (largura):
         for y in range (altura):
             if tabuleiro[x][y] == 1:
-                bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(x*espaco,y*espaco,0), scale=(1, 1, 1))
+                bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(x*espaco,y*espaco,random.random()), scale=(1, 1, 1))
+                bpy.ops.material.new()
+                bpy.data.materials[1].name='Materiais'
+                bpy.data.materials["Materiais"].node_tree.nodes["BSDF - Polimento"].inputs[1].default_value = 0.15
+                bpy.data.materials['Materiais'].diffuse_color=(218,165,32,1)
+                obj = bpy.context.active_object
+                obj.active_material = bpy.data.materials[1]
+                #item.data.materials.append(bpy.data.materials["Materiais"])
 
 def is_dentro(x,y):
     if x < 0 or y < 0 or x >= largura or y >= altura:
@@ -91,6 +104,12 @@ def limpa_tela():
         bpy.ops.object.mode_set(mode='OBJECT')
         bpy.ops.object.select_all(action='SELECT')
         bpy.ops.object.delete(use_global=False)
+        
+def desenha_tudo():
+    for x in range (largura):
+        for y in range (altura):
+                bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(x*espaco,y*espaco,0), scale=(1, 1, 1))
+
 
 if __name__ == '__main__':
     tabuleiro = cria_matriz_tabuleiro()
