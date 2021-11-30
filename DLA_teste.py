@@ -112,6 +112,9 @@ if __name__ == '__main__':
     #Ponto artificial 1 - centro
     p1 = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
     walkers.append(p1)
+    
+    p2 = {"x":MAX_grid/2+1, "y":MAX_grid/2, "z":MAX_grid/2}
+    walkers.append(p2)
     #Ponto artificial 2 - 2*r 
     p2 = {"x":MAX_grid/2+2, "y":MAX_grid/2, "z":MAX_grid/2}
     walkers.append(p2)
