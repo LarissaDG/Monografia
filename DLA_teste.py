@@ -69,43 +69,45 @@ def rand_anda(ponto):
         else: 
             flag = 1
     return ponto
-        
+
+def desenha_bolinhas(lista):
+    for i in range(len(lista)):
+        bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i]["x"],lista[i]["y"],lista[i]["z"]), scale=(1, 1, 1))    
+    
+
+#A função abaixo foi tirada de Aaron J. Olson            
+def limpa_tela():
+    if bpy.ops.object.mode_set.poll():
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.select_all(action='SELECT')
+        bpy.ops.object.delete(use_global=False)
+
 
 if __name__ == '__main__':
     #Insere a starting point
     ponto = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
+    #bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(ponto["x"],ponto["y"],ponto["z"]), scale=(1, 1, 1))    
     tree.append(ponto)
     #Crio os caminhos aleatorios
     walkers = cria_lista_caminhos_aleatorios()
     
-    original_tree = tree
-    original_walkers = walkers
-    
-    for i in range(len(walkers)):
-            print(walkers[i])
-    
     for i in range(num_iteracoes):
-        #Verifico colizão
+        #Imprimo bolinhas
+        desenha_bolinhas(tree)
+        desenha_bolinhas(walkers)
+        
+        #Verifico colizão, se houve colizão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
         
-        print("\n")
-        for i in range(len(walkers)):
-            print(walkers[i])
-        print("\n")
-        
-        if original_tree != tree:
-            print("OK")
-        if original_walkers != walkers:
-            print("OK")
-        if original_tree == tree:
-            print("NOT OK")
-        if original_walkers == walkers:
-            print("NOT OK")
-        
+        #Os que não foram removidos
         #Atualizo o X,Y e Z dos caminhantes
         for i in range(len(walkers)):
             walkers[i] = rand_anda(walkers[i])
             print(walkers[i])
+            
+        #limpo tela
+        #limpa_tela()
+        
     print("Finish")
         
     
