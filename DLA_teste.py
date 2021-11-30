@@ -2,13 +2,6 @@ import bpy
 import numpy as np
 import math
 
-"""teste = np.zeros([3,3],dtype=int)
-print(teste)
-teste [0][0] = 10
-teste [0][1] = 20
-teste [0][2] = 30
-print(teste)"""
-
 #Variáveis globais
 tree = []
 walkers = []
@@ -19,20 +12,10 @@ raio = 1
 ponto = {"x":limite_grid/2, "y":limite_grid/2, "z":limite_grid/2}
 tree.append(ponto)
 
-""""print(tree)
-
-#insere b
-ponto = {"x":2, "y":3, "z":4}
-tree.append(ponto)
-
-print(tree)"""
 
 def distancia_euclidiana(a,b):
     d = sqrt(pow((b["x"] - a["x"]),2)+pow((b["y"] - a["y"]),2)+pow((b["z"] - a["z"]),2))
     return d
-
-#d = distancia_euclidiana(tree[0],tree[1])
-#print(d)
 
 
 """max_bolinhas = 100
