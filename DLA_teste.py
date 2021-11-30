@@ -63,23 +63,19 @@ def checa_colisao(tree,walkers):
             
     return tree, walkers
 
-def checa_dentro_grid(ponto):
-    if (ponto["x"] >= MAX_grid or ponto["x"] <= MIN_grid) or (ponto["y"] >= MAX_grid or ponto["y"] <= MIN_grid) or (ponto["z"] >= MAX_grid or ponto["z"] <= MIN_grid):
+def checa_nao_grid(ponto):
+    if (ponto["x"] > MAX_grid or ponto["x"] < MIN_grid) or (ponto["y"] > MAX_grid or ponto["y"] < MIN_grid) or (ponto["z"] > MAX_grid or ponto["z"] < MIN_grid):
         return 1
     return 0
     
             
 def rand_anda(ponto):
-    flag = 1
-    while(flag):
+    aux = 1
+    while(aux):
         ponto["x"] += random.randint(-2,2)  
         ponto["y"] += random.randint(-2,2)  
         ponto["z"] += random.randint(-2,2)
-        aux = checa_dentro_grid(ponto)
-        if aux == 1:
-            flag = 0
-        else: 
-            flag = 1
+        aux = checa_nao_grid(ponto)
     return ponto
 
 def desenha_bolinhas(lista):
