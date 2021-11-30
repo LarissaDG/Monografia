@@ -64,7 +64,7 @@ def checa_colisao(tree,walkers):
     return tree, walkers
 
 def checa_dentro_grid(ponto):
-    if (ponto["x"] > MAX_grid or ponto["x"] < MIN_grid) and (ponto["y"] > MAX_grid or ponto["y"] < MIN_grid) and (ponto["z"] > MAX_grid or ponto["z"] < MIN_grid):
+    if (ponto["x"] >= MAX_grid or ponto["x"] <= MIN_grid) or (ponto["y"] >= MAX_grid or ponto["y"] <= MIN_grid) or (ponto["z"] >= MAX_grid or ponto["z"] <= MIN_grid):
         return 1
     return 0
     
@@ -124,9 +124,17 @@ if __name__ == '__main__':
     
     desenha_bolinhas(walkers)
     
-    
     #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
     tree, walkers = checa_colisao(tree,walkers)
+    
+    for i in range(len(walkers)):
+        walkers[i] = rand_anda(walkers[i])
+        print(walkers[i])
+    
+    desenha_bolinhas(walkers)
+    
+    
+   
     
     """for i in range(num_iteracoes):
         #Imprimo bolinhas
@@ -135,6 +143,7 @@ if __name__ == '__main__':
         
         #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
+        
         #Os que não foram removidos
         #Atualizo o X,Y e Z dos caminhantes
         for i in range(len(walkers)):
