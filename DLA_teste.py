@@ -120,24 +120,11 @@ if __name__ == '__main__':
     p2 = {"x":MAX_grid/2+3, "y":MAX_grid/2, "z":MAX_grid/2}
     walkers.append(p2)
     
-    desenha_bolinhas(walkers)
+    #desenha_bolinhas(walkers)
     
-    #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
-    tree, walkers = checa_colisao(tree,walkers)
-    
-    for i in range(len(walkers)):
-        walkers[i] = rand_anda(walkers[i])
-        print(walkers[i])
-    
-    desenha_bolinhas(walkers)
-    
-    
-   
-    
-    """for i in range(num_iteracoes):
-        #Imprimo bolinhas
-        #desenha_bolinhas(tree)
-        #desenha_bolinhas(walkers)
+    for i in range(num_iteracoes):
+        #limpo tela
+        #limpa_tela()
         
         #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
@@ -148,10 +135,12 @@ if __name__ == '__main__':
             walkers[i] = rand_anda(walkers[i])
             print(walkers[i])
             
-        #limpo tela
-        #limpa_tela()
-        
-    print("Finish")"""
+        #Imprimo bolinhas
+        desenha_bolinhas(tree)
+        #desenha_bolinhas(walkers)
+       
+    #desenha_bolinhas(tree)    
+    print("Finish")
         
     
     
