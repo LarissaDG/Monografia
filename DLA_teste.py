@@ -9,7 +9,7 @@ MAX_grid = 10
 MIN_grid = 0
 raio = 1
 threshold = raio*2 
-num_iteracoes = 100
+num_iteracoes = 10
 
 def rand_face():
     #escolhe face
@@ -84,17 +84,47 @@ def limpa_tela():
 
 
 if __name__ == '__main__':
+    print("TREE")
+    print(tree)
+    print("\n")
+    
+    print("Walkers")
+    print(walkers)
+    print("\n")
+    
     #Insere a starting point
     ponto = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
-    #bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(ponto["x"],ponto["y"],ponto["z"]), scale=(1, 1, 1))    
+    
+    
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(ponto["x"],ponto["y"],ponto["z"]), scale=(1, 1, 1))    
+    
     tree.append(ponto)
+    
+    print("TREE 2")
+    print(tree)
+    print("\n")
+    
+    print("Walkers 2")
+    print(walkers)
+    print("\n")
+    
     #Crio os caminhos aleatorios
     walkers = cria_lista_caminhos_aleatorios()
+    
+    print("TREE 3")
+    print(tree)
+    print("\n")
+    
+    print("Walkers 3")
+    print(walkers)
+    print("\n")
+    
+    desenha_bolinhas(walkers)
     
     for i in range(num_iteracoes):
         #Imprimo bolinhas
         #desenha_bolinhas(tree)
-        desenha_bolinhas(walkers)
+        #desenha_bolinhas(walkers)
         
         #Verifico colizão, se houve colizão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
