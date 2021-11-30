@@ -15,7 +15,7 @@ def morto_vivo():
         return 1;
     else:
         return 0;
-filename = "/full/path/to/script.py"
+
 def cria_matriz_tabuleiro():
     #inicializa a matriz do tabuleiro com zeros
     tabuleiro = np.zeros([largura,altura],dtype=int)
@@ -43,7 +43,7 @@ def desenha_tabuleiro(tabuleiro):
                 bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(x*espaco,y*espaco,random.random()), scale=(1, 1, 1))
                 bpy.ops.material.new()
                 bpy.data.materials[1].name='Materiais'
-                bpy.data.materials["Materiais"].node_tree.nodes["BSDF - Polimento"].inputs[1].default_value = 0.15
+                bpy.data.materials["Materiais"].node_tree.nodes["BSDF - Polimento"].inputs[0].default_value = 0.15
                 bpy.data.materials['Materiais'].diffuse_color=(218,165,32,1)
                 obj = bpy.context.active_object
                 obj.active_material = bpy.data.materials[1]
