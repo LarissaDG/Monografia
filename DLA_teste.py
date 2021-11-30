@@ -52,32 +52,28 @@ def checa_colisao(tree,walkers):
     return tree, walkers
 
 def checa_dentro_grid(ponto):
-    if ponto["x"] > MAX_grid or ponto["x"] < MIN_grid:
-        return 1
-    if ponto["y"] > MAX_grid or ponto["y"] < MIN_grid:
-        return 1
-    if ponto["z"] > MAX_grid or ponto["z"] < MIN_grid:
+    if (ponto["x"] > MAX_grid or ponto["x"] < MIN_grid) and (ponto["y"] > MAX_grid or ponto["y"] < MIN_grid) and (ponto["z"] > MAX_grid or ponto["z"] < MIN_grid):
         return 1
     return 0
     
             
 def rand_anda(ponto):
-    aux = 1
-    while(aux):
+    flag = 1
+    while(flag):
         ponto["x"] += random.randint(-2,2)  
         ponto["y"] += random.randint(-2,2)  
-        ponto["z"] += random.randint(-2,2) 
+        ponto["z"] += random.randint(-2,2)
         aux = checa_dentro_grid(ponto)
-    if aux == 0:
-        print("Ponto:")
-        print(ponto)
-        print("\n")
-        return ponto
+        if aux == 1:
+            flag = 0
+        else: 
+            flag = 1
+    return ponto
         
 
 if __name__ == '__main__':
     #Insere a starting point
-    ponto = {"x":limite_grid/2, "y":limite_grid/2, "z":limite_grid/2}
+    ponto = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
     tree.append(ponto)
     #Crio os caminhos aleatorios
     walkers = cria_lista_caminhos_aleatorios()
