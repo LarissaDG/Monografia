@@ -42,13 +42,25 @@ def distancia_euclidiana(a,b):
     return d
 
 def checa_colisao(tree,walkers):
+    remove = []
     for i in range(len(tree)):
         for j in range(len(walkers)):
             d = distancia_euclidiana(tree[i],walkers[j])
             if d < threshold:
-                aux = walkers[j]
-                del walkers[j]
-                tree.append(aux)
+                print("BOOOM!!!!!!")
+                print(tree[i])
+                print(walkers[j])
+                print("\n")
+                
+                remove.append(j)
+                
+    remove.sort(reverse=True)
+    
+    for i in remove:
+        aux = walkers.pop(i)
+        tree.append(aux)
+        
+            
     return tree, walkers
 
 def checa_dentro_grid(ponto):
@@ -83,50 +95,42 @@ def limpa_tela():
         bpy.ops.object.delete(use_global=False)
 
 
-if __name__ == '__main__':
-    print("TREE")
-    print(tree)
-    print("\n")
-    
-    print("Walkers")
-    print(walkers)
-    print("\n")
-    
+if __name__ == '__main__':  
     #Insere a starting point
     ponto = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
     
     
-    bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(ponto["x"],ponto["y"],ponto["z"]), scale=(1, 1, 1))    
+    #bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(ponto["x"],ponto["y"],ponto["z"]), scale=(1, 1, 1))    
     
     tree.append(ponto)
-    
-    print("TREE 2")
-    print(tree)
-    print("\n")
-    
-    print("Walkers 2")
-    print(walkers)
-    print("\n")
-    
+        
     #Crio os caminhos aleatorios
     walkers = cria_lista_caminhos_aleatorios()
+
+    #Testado
     
-    print("TREE 3")
-    print(tree)
-    print("\n")
-    
-    print("Walkers 3")
-    print(walkers)
-    print("\n")
+    #Ponto artificial 1 - centro
+    p1 = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
+    walkers.append(p1)
+    #Ponto artificial 2 - 2*r 
+    p2 = {"x":MAX_grid/2+2, "y":MAX_grid/2, "z":MAX_grid/2}
+    walkers.append(p2)
+    #Ponto artificial 3 >= 2*r 
+    p2 = {"x":MAX_grid/2+3, "y":MAX_grid/2, "z":MAX_grid/2}
+    walkers.append(p2)
     
     desenha_bolinhas(walkers)
     
-    for i in range(num_iteracoes):
+    
+    #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
+    tree, walkers = checa_colisao(tree,walkers)
+    
+    """for i in range(num_iteracoes):
         #Imprimo bolinhas
         #desenha_bolinhas(tree)
         #desenha_bolinhas(walkers)
         
-        #Verifico colizão, se houve colizão tiro de uma lista e ponho na outra
+        #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
         #Os que não foram removidos
         #Atualizo o X,Y e Z dos caminhantes
@@ -137,7 +141,7 @@ if __name__ == '__main__':
         #limpo tela
         #limpa_tela()
         
-    print("Finish")
+    print("Finish")"""
         
     
     
