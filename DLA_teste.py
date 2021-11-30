@@ -1,47 +1,56 @@
 import bpy
-import numpy as np
+import random
 import math
 
 #Variáveis globais
 tree = []
 walkers = []
-limite_grid = 10
+MAX_grid = 10
+MIN_grid = 0
 raio = 1
 
 #Insere a starting point
 ponto = {"x":limite_grid/2, "y":limite_grid/2, "z":limite_grid/2}
 tree.append(ponto)
 
+def rand_face():
+    #escolhe face
+    rand = random.randint(1,6)
+    
+    if rand == 1:
+        ponto = {"x":random.randint(MIN_grid,MAX_grid), "y":random.randint(MIN_grid,MAX_grid), "z":MIN_grid}
+    if rand == 2:
+        ponto = {"x":random.randint(MIN_grid,MAX_grid), "y":MIN_grid, "z":random.randint(MIN_grid,MAX_grid)}
+    if rand == 3:
+        ponto = {"x":MIN_grid, "y":random.randint(MIN_grid,MAX_grid), "z":random.randint(MIN_grid,MAX_grid)}
+    if rand == 4:
+        ponto = {"x":MAX_grid, "y":random.randint(MIN_grid,MAX_grid), "z":random.randint(MIN_grid,MAX_grid)}
+    if rand == 5:
+         ponto = {"x":random.randint(MIN_grid,MAX_grid), "y":MAX_grid, "z":random.randint(MIN_grid,MAX_grid)}
+    if rand == 6:
+         ponto = {"x":random.randint(MIN_grid,MAX_grid), "y":random.randint(MIN_grid,MAX_grid), "z":MAX_grid}
+    return ponto
+
+"""def cria_lista_caminhos aleatorios(num):
+    aux = [] 
+    for i in range(num):"""
+       
 
 def distancia_euclidiana(a,b):
     d = sqrt(pow((b["x"] - a["x"]),2)+pow((b["y"] - a["y"]),2)+pow((b["z"] - a["z"]),2))
     return d
 
-
-"""max_bolinhas = 100
-num_coordenadas = 3
-
-#Inicializo a lista da arvore:
-def inicializa_arvore():
-    tree = np.zeros([max_bolinhas,num_coordenadas],dtype=int)
-    #Estou confusa sobre como colocar um novo elemento no array.
-    tree = np.append([lim/2,lim/2,lim/2])
-    return 
-
-#cria um Random Walkerexec(compile(open(filename).read(), filename, 'exec'))
-walker = np.random.rand(max_bolinhas-1, 3) * lim
-
-#Criar um ponto no centro do meu grid
-
-
-
-bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lim/2,lim/2, lim/2), scale=(1, 1, 1))
-
-
-def checa_colisao():
+"""def checa_colisao():
     for i in len(tree):
-        d = distancia_euclidiana(walker, tree[i])
-        if d < raio*2:
+        for j in len(walkers):
+            d = distancia_euclidiana(tree[i],walkers[j])
+            if d < raio*2:"""
+                
+    
+#max_bolinhas = 100
+#num_coordenadas = 3
 
+
+#bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lim/2,lim/2, lim/2), scale=(1, 1, 1))
 
 #desenhar todos os pontos que pertencem a lista tree"""
