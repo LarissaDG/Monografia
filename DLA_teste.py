@@ -8,8 +8,8 @@ walkers = []
 MAX_grid = 10
 MIN_grid = 0
 raio = 1
-threshold = raio * 2
-num_iteracoes = 10
+threshold = raio*2 
+num_iteracoes = 100
 
 def rand_face():
     #escolhe face
@@ -93,12 +93,11 @@ if __name__ == '__main__':
     
     for i in range(num_iteracoes):
         #Imprimo bolinhas
-        desenha_bolinhas(tree)
+        #desenha_bolinhas(tree)
         desenha_bolinhas(walkers)
         
         #Verifico colizão, se houve colizão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
-        
         #Os que não foram removidos
         #Atualizo o X,Y e Z dos caminhantes
         for i in range(len(walkers)):
