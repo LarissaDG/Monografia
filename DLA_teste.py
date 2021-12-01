@@ -88,11 +88,15 @@ def desenha_bolinhas(lista):
     for i in range(len(lista)):
         bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i]["x"],lista[i]["y"],lista[i]["z"]), scale=(1, 1, 1))    
     
-
+#Os cubos sobrepõe muito ruim os resultados
 def desenha_cubos(lista):
     for i in range(len(lista)):
         bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(lista[i]["x"],lista[i]["y"],lista[i]["z"]), scale=(1, 1, 1))
 
+#No 2D talvez fique legal. No 3D ficou ruim
+def desenha_torus(lista):
+    for i in range(len(lista)):
+        bpy.ops.mesh.primitive_torus_add(align='WORLD', location=(lista[i]["x"],lista[i]["y"],lista[i]["z"]), rotation=(0, 0, 0))
     
 
 #A função abaixo foi tirada de Aaron J. Olson            
@@ -137,7 +141,8 @@ if __name__ == '__main__':
         #desenha_bolinhas(tree)
         #desenha_bolinhas(walkers)
        
-    #desenha_bolinhas(tree) 
-    desenha_cubos(tree)   
+    desenha_bolinhas(tree) 
+    #desenha_cubos(tree)  
+    #desenha_torus(tree) 
     print("Finish")
         
