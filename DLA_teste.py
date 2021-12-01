@@ -127,10 +127,10 @@ if __name__ == '__main__':
             print(walkers[i])
         
         #Imprimo bolinhas
-        desenha_bolinhas(tree)
+        #desenha_bolinhas(tree)
         #desenha_bolinhas(walkers)
        
-    #desenha_bolinhas(tree)    
+    desenha_bolinhas(tree)    
     print("Finish")
         
     
