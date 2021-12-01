@@ -18,24 +18,27 @@ Coisas a se testar:<br>
 	[ ]Adicionar textura de metal<br>
 	[ ]Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
 	[ ]Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
-	[ ]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender
-	[ ]Testar outros softwares como o Processing 
+	[ ]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
+	[ ]Testar outros softwares como o Processing <br>
 
-Observações:
-	-Código bom para pingentes e brincos
-	-Não consigo criar uma árvore com tamanho maior que 10
-	-Posso usar mais caminhos aleatórios que estou usado
-	-Não consigo aumentar muito o número de iterações, mas o código já foi rodado com 100 iterações
+Observações:<br>
+	-Código bom para pingentes e brincos<br>
+	-Não consigo criar uma árvore com tamanho maior que 10<br>
+	-Posso usar mais caminhos aleatórios que estou usado<br>
+	-Não consigo aumentar muito o número de iterações, mas o código já foi rodado com 100 iterações<br>
 
 Os demais códigos se referem a um algoritmo distinto. Neles são implementados automatos celulares, mais especificamente o jogo da vida de Conway<br>
 
-Observações:
-	-Código bom para anéis e brincos
+Coisas a se testar:<br>
+	[ ]Limpar os arquivos do jogo da vida de Conway, alguns são meio ruins ou redundantes<br>
+
+Observações:<br>
+	-Código bom para anéis e brincos<br>
 
 
 <h2>Execução</h2>
 
-Para roda-los abrir o Blender, clicar em script. No terminal digitar:
+Para roda-los abrir o Blender, clicar em script. No terminal digitar:<br>
 
 ```
 filename = r"Path
