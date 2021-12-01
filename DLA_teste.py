@@ -111,19 +111,6 @@ if __name__ == '__main__':
 
     #Testado
     
-    #Ponto artificial 1 - centro
-    p1 = {"x":MAX_grid/2, "y":MAX_grid/2, "z":MAX_grid/2}
-    walkers.append(p1)
-    
-    p2 = {"x":MAX_grid/2+1, "y":MAX_grid/2, "z":MAX_grid/2}
-    walkers.append(p2)
-    #Ponto artificial 2 - 2*r 
-    p2 = {"x":MAX_grid/2+2, "y":MAX_grid/2, "z":MAX_grid/2}
-    walkers.append(p2)
-    #Ponto artificial 3 >= 2*r 
-    p2 = {"x":MAX_grid/2+3, "y":MAX_grid/2, "z":MAX_grid/2}
-    walkers.append(p2)
-    
     #desenha_bolinhas(walkers)
     
     for i in range(num_iteracoes):
@@ -139,7 +126,6 @@ if __name__ == '__main__':
             walkers[i] = rand_anda(walkers[i])
             print(walkers[i])
         
-        input()  
         #Imprimo bolinhas
         desenha_bolinhas(tree)
         #desenha_bolinhas(walkers)
