@@ -2,6 +2,7 @@ import bpy
 import random
 import math
 
+
 #Variáveis globais
 tree = []
 walkers = []
@@ -43,18 +44,21 @@ def distancia_euclidiana(a,b):
 
 def checa_colisao(tree,walkers):
     remove = []
-    for i in range(len(tree)):
-        for j in range(len(walkers)):
+    for j in range(len(walkers)):
+        for i in range(len(tree)):
             d = distancia_euclidiana(tree[i],walkers[j])
             if d < threshold:
                 print("BOOOM!!!!!!")
                 print(tree[i])
                 print(walkers[j])
                 print("\n")
-                
                 remove.append(j)
+                break
                 
     remove.sort(reverse=True)
+    
+    print(remove)
+    print(len(walkers))
     
     for i in remove:
         aux = walkers.pop(i)
@@ -124,7 +128,7 @@ if __name__ == '__main__':
     
     for i in range(num_iteracoes):
         #limpo tela
-        #limpa_tela()
+        limpa_tela()
         
         #Verifico colisão, se houve colisão tiro de uma lista e ponho na outra
         tree, walkers = checa_colisao(tree,walkers)
@@ -134,7 +138,8 @@ if __name__ == '__main__':
         for i in range(len(walkers)):
             walkers[i] = rand_anda(walkers[i])
             print(walkers[i])
-            
+        
+        input()  
         #Imprimo bolinhas
         desenha_bolinhas(tree)
         #desenha_bolinhas(walkers)
