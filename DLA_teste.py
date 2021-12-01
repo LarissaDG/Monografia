@@ -89,6 +89,12 @@ def desenha_bolinhas(lista):
         bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i]["x"],lista[i]["y"],lista[i]["z"]), scale=(1, 1, 1))    
     
 
+def desenha_cubos(lista):
+    for i in range(len(lista)):
+        bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(lista[i]["x"],lista[i]["y"],lista[i]["z"]), scale=(1, 1, 1))
+
+    
+
 #A função abaixo foi tirada de Aaron J. Olson            
 def limpa_tela():
     if bpy.ops.object.mode_set.poll():
@@ -113,7 +119,8 @@ if __name__ == '__main__':
     
     #desenha_bolinhas(walkers)
     
-    for i in range(num_iteracoes):
+    #for i in range(num_iteracoes):
+    while(len(tree)<num_iteracoes):
         #limpo tela
         limpa_tela()
         
@@ -130,13 +137,7 @@ if __name__ == '__main__':
         #desenha_bolinhas(tree)
         #desenha_bolinhas(walkers)
        
-    desenha_bolinhas(tree)    
+    #desenha_bolinhas(tree) 
+    desenha_cubos(tree)   
     print("Finish")
         
-    
-    
-    #desenhar todos os pontos que pertencem a lista tree    
-    
-"""max_bolinhas = 100
-num_coordenadas = 3
-bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lim/2,lim/2, lim/2), scale=(1, 1, 1))"""
