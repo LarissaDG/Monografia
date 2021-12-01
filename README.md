@@ -18,9 +18,14 @@ Coisas a se testar:<br>
 	[ ]Adicionar textura de metal<br>
 	[ ]Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
 	[ ]Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
+	[ ]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender
+	[ ]Testar outros softwares como o Processing 
 
 Observações:
 	-Código bom para pingentes e brincos
+	-Não consigo criar uma árvore com tamanho maior que 10
+	-Posso usar mais caminhos aleatórios que estou usado
+	-Não consigo aumentar muito o número de iterações, mas o código já foi rodado com 100 iterações
 
 Os demais códigos se referem a um algoritmo distinto. Neles são implementados automatos celulares, mais especificamente o jogo da vida de Conway<br>
 
