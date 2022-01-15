@@ -2,6 +2,8 @@ import bpy
 import random
 import numpy as np
 
+#Tentei incluir o matérial no código
+
 context = bpy.context
 #Variaveis globais
 espaco = 2

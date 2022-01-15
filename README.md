@@ -30,10 +30,12 @@ Observações:<br>
 Os demais códigos se referem a um algoritmo distinto. Neles são implementados automatos celulares, mais especificamente o jogo da vida de Conway<br>
 
 Coisas a se testar:<br>
-	[ ]Limpar os arquivos do jogo da vida de Conway, alguns são meio ruins ou redundantes<br>
+	[x]Limpar os arquivos do jogo da vida de Conway, alguns são meio ruins ou redundantes<br>
+	[ ]Adicionar o material de forma procedural<br>
 
 Observações:<br>
 	-Código bom para anéis e brincos<br>
+	-O arquivo automato_celular code contém o código "orignal" do projeto. Enquanto o arquivo "trabalhar.py" Adiciona o matérial de forma procedural.<br>
 
 
 <h2>Execução</h2>
@@ -50,3 +52,9 @@ Ele vai gerar uma imagem correspondente ao tabuleiro original<br>
 Printar as iterações do algoritmo<br>
 Limpar a tela com limpa_tela() no terminal<br>
 desenha_tabuleiro(tabuleiro) para ver o desenho final do jogo da vida<br> 
+
+
+Organização em pastas. Agora processo primeiro e só imprimo os resultados. Checar a corretude do programa. Gride maior melhor resultado. Diminuir bolinhas. Começar de baixo pra cima e de cima pra baixo. Animar, fazer um GIF. Talvez testar no processing
+
+Testar de fazer verificações topograficas no Jogo da vida de Conway
+

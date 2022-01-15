@@ -14,7 +14,7 @@ def morto_vivo():
         return 1;
     else:
         return 0;
-filename = "/full/path/to/script.py"
+
 def cria_matriz_tabuleiro():
     #inicializa a matriz do tabuleiro com zeros
     tabuleiro = np.zeros([largura,altura],dtype=int)
