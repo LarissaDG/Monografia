@@ -92,14 +92,55 @@ def limpa_tela():
         bpy.ops.object.select_all(action='SELECT')
         bpy.ops.object.delete(use_global=False)
 
+def junta_objetos():
+    if bpy.ops.object.mode_set.poll():
+        bpy.ops.object.mode_set(mode='OBJECT')
+        bpy.ops.object.select_all(action='SELECT')
+        bpy.ops.object.join()
+
+
+#Função tirada de https://vividfax.github.io/2021/01/14/blender-materials.html
+def newMaterial(name_of_material):
+    mat = bpy.data.materials.get(name_of_material)
+    
+    if(mat) is None:
+        mat = bpy.data.materials.new(name=name_of_material)
+    mat.use_nodes = True
+    
+    if mat.node_tree:
+        mat.node_tree.links.clear()
+        mat.node_tree.nodes.clear()
+    return mat
+
+def newShader(name_of_material, r, g, b):
+    mat = newMaterial(name_of_material)
+    
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+    
+    output = nodes.new(type='ShaderNodeOutputMaterial')
+
+    shader = nodes.new(type='ShaderNodeBsdfGlossy')
+    nodes["BSDF - Polimento"].inputs[0].default_value = (r, g, b, 1)
+    nodes["BSDF - Polimento"].inputs[1].default_value = 0
+
+    links.new(shader.outputs[0], output.inputs[0])
+
+    return mat
+    
+
 if __name__ == '__main__':
+    limpa_tela()
     tabuleiro = cria_matriz_tabuleiro()
     desenha_tabuleiro(tabuleiro)
     for i in range(gen):
        tabuleiro = geracao(tabuleiro)
-       print(tabuleiro)
-    print(tabuleiro)
-    #desenha_tabuleiro(tabuleiro)
+       #print(tabuleiro)
+    #print(tabuleiro)
+    desenha_tabuleiro(tabuleiro)
+    junta_objetos()
+    mat = newShader("Shader2", 0.658, 0.428, 0.038)
+    bpy.context.active_object.data.materials.append(mat)
 '''tabuleiro_inicial = cria_matriz_tabuleiro()
 print(tabuleiro_inicial)
 aux = salva_param(tabuleiro_inicial)
