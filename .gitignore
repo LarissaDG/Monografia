@@ -7,3 +7,6 @@ Imagens/
 Instruções Git.txt
 *.zip
 Random cubes generative test/
+Arquivos Blender/
+*.blend1
+.ipynb_checkpoints/
