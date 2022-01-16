@@ -3,6 +3,7 @@ import numpy as np
 from numpy import savetxt
 from numpy import loadtxt
 raio = 0.8
+espaco = 1
 #Funções 3D
 def desenha_bolinhas(lista):
     for i in range(np.shape(lista)[0]):
@@ -26,12 +27,12 @@ def desenha_circulo(lista):
 #Funcoes 2D
 def desenha_bolinhas_2D(lista):
     for i in range(np.shape(lista)[0]):
-        bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i][0],lista[i][1],0), scale=(1, 1, 1))    
+        bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i][0]*espaco,lista[i][1],0), scale=(1, 1, 1))    
     
 #Os cubos sobrepõe muito ruim os resultados -Ficou ruim no 2D tbm
 def desenha_cubos_2D(lista):
     for i in range(np.shape(lista)[0]):
-        bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(lista[i][0],lista[i][1],0), scale=(1, 1, 1))
+        bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(lista[i][0]*espaco,lista[i][1]*espaco,0), scale=(1, 1, 1))
 
 #No 2D talvez ficou legal. 
 def desenha_torus_2D(lista):
@@ -40,7 +41,7 @@ def desenha_torus_2D(lista):
     
 def desenha_circulo_2D(lista):
     for i in range(np.shape(lista)[0]):
-       bpy.ops.mesh.primitive_circle_add(radius=raio, fill_type='TRIFAN', enter_editmode=False, align='WORLD', location=(lista[i][0],lista[i][1],0), scale=(1, 1, 1))
+       bpy.ops.mesh.primitive_circle_add(radius=raio, fill_type='TRIFAN', enter_editmode=False, align='WORLD', location=(lista[i][0]*espaco,lista[i][1]*espaco,0), scale=(1, 1, 1))
 
 
 def desenha_quadrado_2D(lista):

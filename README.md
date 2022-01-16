@@ -18,7 +18,7 @@ Coisas a se testar:<br>
 	[ ]Adicionar textura de metal<br>
 	[ ]Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
 	[ ]Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
-	[ ]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
+	[x]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
 	[ ]Testar outros softwares como o Processing <br>
 
 Observações:<br>
@@ -31,12 +31,17 @@ Os demais códigos se referem a um algoritmo distinto. Neles são implementados 
 
 Coisas a se testar:<br>
 	[x]Limpar os arquivos do jogo da vida de Conway, alguns são meio ruins ou redundantes<br>
-	[ ]Adicionar o material de forma procedural<br>
+	[x]Adicionar o material de forma procedural<br>
 
 Observações:<br>
 	-Código bom para anéis e brincos<br>
 	-O arquivo automato_celular code contém o código "orignal" do projeto. Enquanto o arquivo "trabalhar.py" Adiciona o matérial de forma procedural.<br>
 
+
+Coisas a se testar geral:<br>
+	[ ]Salvar entradas e saidas<br>
+	[ ]Adicionar o material de forma procedural<br>
+	[ ]Tolerar variações dos parametros(2D,3D, etc...)<br>
 
 <h2>Execução</h2>
 
