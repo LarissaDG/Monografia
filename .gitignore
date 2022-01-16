@@ -10,3 +10,5 @@ Random cubes generative test/
 Arquivos Blender/
 *.blend1
 .ipynb_checkpoints/
+STL/
+*.stl
