@@ -3,7 +3,8 @@ import numpy as np
 from numpy import savetxt
 from numpy import loadtxt
 raio = 0.8
-espaco = 1
+espaco = 2
+
 #Funções 3D
 def desenha_bolinhas(lista):
     for i in range(np.shape(lista)[0]):
@@ -27,7 +28,7 @@ def desenha_circulo(lista):
 #Funcoes 2D
 def desenha_bolinhas_2D(lista):
     for i in range(np.shape(lista)[0]):
-        bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i][0]*espaco,lista[i][1],0), scale=(1, 1, 1))    
+        bpy.ops.mesh.primitive_uv_sphere_add(radius=raio, enter_editmode=False, align='WORLD', location=(lista[i][0]*espaco,lista[i][1]*espaco,0), scale=(1, 1, 1))    
     
 #Os cubos sobrepõe muito ruim os resultados -Ficou ruim no 2D tbm
 def desenha_cubos_2D(lista):
@@ -93,10 +94,12 @@ def newShader(name_of_material, r, g, b):
         
 
 if __name__ == '__main__':
-    m = np.loadtxt(r"C:\Users\lalad\Documents\Blender\lista_2D_2.txt", dtype=int)
-    #desenha_bolinhas(m)
+    m = np.loadtxt(r"C:\Users\lalad\Documents\Blender\square_pattern_2.txt", dtype=int)
+    limpa_tela()
+    #desenha_bolinhas_2D(m)
     desenha_circulo_2D(m)
     #desenha_quadrado_2D(m)
+    #desenha_cubos_2D(m)
     junta_objetos()
     #mat = newShader("Shader", 0.494,0.894, 0.658)
     mat = newShader("Shader2", 0.658, 0.428, 0.038)

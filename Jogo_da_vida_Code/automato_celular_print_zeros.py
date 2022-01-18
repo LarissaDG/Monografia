@@ -39,7 +39,7 @@ def salva_param_coord(tabuleiro, op):
         file = open(r"C:\Users\lalad\Documents\Blender\output.txt","w")
     for x in range (largura):
         for y in range (altura):
-            if tabuleiro[x][y] == 1:
+            if tabuleiro[x][y] == 0:
                 aux = []
                 aux.append(x)
                 aux.append(y)
@@ -52,8 +52,15 @@ def salva_param_coord(tabuleiro, op):
 def desenha_tabuleiro(tabuleiro):
     for x in range (largura):
         for y in range (altura):
-            if tabuleiro[x][y] == 1:
+            if tabuleiro[x][y] == 0:
                 bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(x*espaco,y*espaco,0), scale=(1, 1, 1))
+
+def desenha_tabuleiro_altura(tabuleiro):
+    for x in range (largura):
+        for y in range (altura):
+            if tabuleiro[x][y] == 0:
+                bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, align='WORLD', location=(x*espaco,y*espaco,random.random()*2), scale=(1, 1, 1))
+
 
 def is_dentro(x,y):
     if x < 0 or y < 0 or x >= largura or y >= altura:
@@ -160,7 +167,7 @@ if __name__ == '__main__':
        #print(tabuleiro)
        
     #print(tabuleiro)
-    desenha_tabuleiro(tabuleiro)
+    desenha_tabuleiro(tabuleiro) #Pode ser substituido por desenha_tabuleiro_altura
     
     junta_objetos()
     mat = newShader("Shader2", 0.658, 0.428, 0.038)
