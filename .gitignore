@@ -1,6 +1,6 @@
 Instruções Git.txt
 STL/
-Random cubes generative test/
+Random generative test/
 jogo-da-vida-conway-master/
 Imagens/
 Entradas/
@@ -13,3 +13,4 @@ Arquivos Blender/
 *.cpp
 *.zip
 *.stl
+*.txt
