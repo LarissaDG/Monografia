@@ -76,7 +76,7 @@ filename = r"Path_of_file"
 exec(compile(open(filename).read(), filename, 'exec'))
 ```
 
-Referência:[](https://learnsharewithdp.wordpress.com/2018/08/27/how-to-run-a-python-script-in-blender/)
+Referência:[How to run python script in Blender](https://learnsharewithdp.wordpress.com/2018/08/27/how-to-run-a-python-script-in-blender/)
 
 Comentários sobre os códigos do jogo da vida de Conway <br>
 Ele vai gerar uma imagem correspondente ao tabuleiro original<br>
