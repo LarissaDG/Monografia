@@ -2,8 +2,8 @@ import bpy
 import numpy as np
 from numpy import savetxt
 from numpy import loadtxt
-raio = 0.8
-espaco = 2
+raio = 1.5
+espaco = 1.8
 
 #Funções 3D
 def desenha_bolinhas(lista):
@@ -94,7 +94,7 @@ def newShader(name_of_material, r, g, b):
         
 
 if __name__ == '__main__':
-    m = np.loadtxt(r"C:\Users\lalad\Documents\Blender\square_pattern_2.txt", dtype=int)
+    m = np.loadtxt(r"C:\Users\lalad\Documents\Blender\lista_2D_18.txt", dtype=int)
     limpa_tela()
     #desenha_bolinhas_2D(m)
     desenha_circulo_2D(m)
