@@ -6,23 +6,45 @@ O presente trabalho trata sobre como algoritmos generativos que são usados para
 ## Código
 Os códigos se encontram escritos em Python. A princípio se desenvolveu os códigos dentro do próprio Blender, mas ao notar que alguns algoritmos eram muito pesados para o Blender optou-se por desenvolver os códigos e os processamentos fora dele. E, assim, usar um script apenas para ler e printar os resultados do processamento no Blender.<br>
 
+### Pasta DLA_Code
+
+Nela se encontram 4 arquivos, a saber:
+
+- *Cool_patterns.ipynb* - código com o qual eu consegui os melhores resultados pro DLA<br>
+- *DFL_2D.py* - Código inicial do DLA que imprime configurações pequenas do tabuleiro. Irrelevante.<br>
+- *DLA_teste.py* - DLA 3D, não gera desings grandes nem relevantes<br>
+- *Square patterns DLA.ipynb* - código com parametros os quais eu gero padrões ramificados DLA, mas eles ficam meio quadradinhos.<br>
+
+Os quais consistem na implementação de um algoritmo de Diffusion-Limited Aggregation<br>
+
+Sobre o script *DLA_teste.py*: ele foi escrito de modo que:
+
+1. A princípio se determinava um número arbitrário de interações que o algoritmo deveria rodar para obter a estrutura 3D finalizada,
+agora itera-se até que o vetor de bolinhas fixas contenha 10 elementos.<br>
+2. Foram criadas funções, que não são utilizadas, com diferentes formas(cubos, e torus) como blocos de construção da estrutura 3D ao invés de esferas <br>
+
+
+**Sugestão de Modificações**
+- [x]Criar formas em duas dimensões ao invés de três. Cool_patterns e square patterns fazem isso. Posso usa os outputs gerados com 3 dimensões e ignorar os valores de z, por exemplo.<br>
+- [ ]Construir de baixo pra cima, de cima para baixo, dentro de outras formas, contornando formas, etc.<br>
+- [x]DLA com um círculo de pontos fixos. Vide arquivo:<br>
+- [ ]Mudar o tamanho das esferas a medida que são acopladas<br>
+- [x]Adicionar textura de metal. Agora eu faço isso de maneira procedural. Vide arquivo: <br>
+- [ ]Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
+- [ ]Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
+- [x]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
+- [ ]~~Testar outros softwares como o Processing.~~ Desnecessário <br>
+
+
+## Pasta Jogo_da_vida_Code
+
+## Pasta Processamento
+
+
 --------------------
-O script DLA_teste.py consiste na implementação de um algoritmo de Diffusion-Limited Aggregation<br>
-Ele foi escrito de modo que:<br>
-	1) A princípio se determinava um número arbitrário de interações que o algoritmo deveria rodar para obter a estrutura 3D finalizada,
-	agora itera-se até que o vetor de bolinhas fixas contenha 10 elementos.<br>
-	2)Foram criadas funções, que não são utilizadas, com diferentes formas(cubos, e torus) como blocos de construção da estrutura 3D ao invés de esferas <br>
 
 Coisas a se testar:<br>
-	[ ]Criar formas em duas dimensões ao invés de três<br>
-	[ ]Construir de baixo pra cima, de cima para baixo, dentro de outras formas, contornando formas, etc<br>
-	[ ]Mudar o tamanho das esferas a medida que são acopladas<br>
-	[ ]Adicionar textura de metal<br>
-	[ ]Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
-	[ ]Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
-	[x]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
-	[ ]Testar outros softwares como o Processing <br>
-
+	
 Observações:<br>
 	-Código bom para pingentes e brincos<br>
 	-Não consigo criar uma árvore com tamanho maior que 10<br>
@@ -45,14 +67,16 @@ Coisas a se testar geral:<br>
 	[ ]Adicionar o material de forma procedural<br>
 	[ ]Tolerar variações dos parametros(2D,3D, etc...)<br>
 
-<h2>Execução</h2>
+## Execução
 
-Para roda-los abrir o Blender, clicar em script. No terminal digitar:<br>
+Para rodá-los abrir o Blender, clicar em script. Entrar com o código-fonte desejado, na área de texto. Então ou clicar no play no canto superior direitou ou ir no terminal no canto inferior esquerdo e digitar:<br>
 
 ```
-filename = r"Path
+filename = r"Path_of_file"
 exec(compile(open(filename).read(), filename, 'exec'))
 ```
+
+Referência:[](https://learnsharewithdp.wordpress.com/2018/08/27/how-to-run-a-python-script-in-blender/)
 
 Comentários sobre os códigos do jogo da vida de Conway <br>
 Ele vai gerar uma imagem correspondente ao tabuleiro original<br>
