@@ -1,10 +1,12 @@
 # Monografia
 
-Os códigos se encontram escritos em Python e foram desenvolvidos dentro do Blender, ambiente no qual devem ser executados.<br>
+## Introdução
+O presente trabalho trata sobre como algoritmos generativos que são usados para a produção de artes plásticas e podem ser usados de maneira análoga para a criação de designs de joias. Portanto,  finalidade dos códigos aqui apresentados é implementar os algoritmos generativos responsáveis por criar o design das peças. Demonstranto, assim, o potencial que o uso destes algoritmo têm na criação de produtos exclusivos e inovadores.<br>
 
-A finalidade dos códigos aqui apresentados é demonstrar o potencial de arte generativa na criação de produtos exclusivos e inovadores,
-mais especificamente no design de joias.<br>
+## Código
+Os códigos se encontram escritos em Python. A princípio se desenvolveu os códigos dentro do próprio Blender, mas ao notar que alguns algoritmos eram muito pesados para o Blender optou-se por desenvolver os códigos e os processamentos fora dele. E, assim, usar um script apenas para ler e printar os resultados do processamento no Blender.<br>
 
+--------------------
 O script DLA_teste.py consiste na implementação de um algoritmo de Diffusion-Limited Aggregation<br>
 Ele foi escrito de modo que:<br>
 	1) A princípio se determinava um número arbitrário de interações que o algoritmo deveria rodar para obter a estrutura 3D finalizada,
