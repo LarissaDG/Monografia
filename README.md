@@ -25,15 +25,15 @@ agora itera-se até que o vetor de bolinhas fixas contenha 10 elementos.<br>
 
 
 **Sugestão de Modificações**
-- [x]Criar formas em duas dimensões ao invés de três. Cool_patterns e square patterns fazem isso. Posso usa os outputs gerados com 3 dimensões e ignorar os valores de z, por exemplo.<br>
-- [ ]Construir de baixo pra cima, de cima para baixo, dentro de outras formas, contornando formas, etc.<br>
-- [x]DLA com um círculo de pontos fixos. Vide arquivo:<br>
-- [ ]Mudar o tamanho das esferas a medida que são acopladas<br>
-- [x]Adicionar textura de metal. Agora eu faço isso de maneira procedural. Vide arquivo: <br>
-- [ ]Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
-- [ ]Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
-- [x]Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
-- [ ]~~Testar outros softwares como o Processing.~~ Desnecessário <br>
+- [x] Criar formas em duas dimensões ao invés de três. Cool_patterns e square patterns fazem isso. Posso usa os outputs gerados com 3 dimensões e ignorar os valores de z, por exemplo.<br>
+- [ ] Construir de baixo pra cima, de cima para baixo, dentro de outras formas, contornando formas, etc.<br>
+- [x] DLA com um círculo de pontos fixos. Vide arquivo:<br>
+- [ ] Mudar o tamanho das esferas a medida que são acopladas<br>
+- [x] Adicionar textura de metal. Agora eu faço isso de maneira procedural. Vide arquivo: <br>
+- [ ] Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
+- [ ] Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
+- [x] Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
+- [ ] ~~Testar outros softwares como o Processing.~~ Desnecessário <br>
 
 
 ## Pasta Jogo_da_vida_Code
