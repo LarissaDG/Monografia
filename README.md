@@ -17,6 +17,7 @@ Nela se encontram 4 arquivos, a saber:
 - *DLA_teste.py*<br>
 - *Square patterns DLA.ipynb*<br>
 - *Processamento DLA e DLA_circle.ipynb*<br>
+- *Processamento DLA_teste.ipynb*<br>
 
 Os quais consistem na implementação de um algoritmo de Diffusion-Limited Aggregation<br>
 
@@ -29,39 +30,47 @@ Sobre o script *DLA_teste.py*: ele implementa o DLA em 3D, e não gera designs n
 agora itera-se até que o vetor de bolinhas fixas contenha 10 elementos.<br>
 2. Foram criadas funções, que não são utilizadas, com diferentes formas(cubos, e torus) como blocos de construção da estrutura 3D ao invés de esferas <br>
 
+Observações:<br>
+- Código bom para pingentes e brincos.<br>
+- Não consigo criar uma árvore com tamanho maior que 10<br>
+- Posso usar mais caminhos aleatórios que estou usado<br>
+- Não consigo aumentar muito o número de iterações, mas o código já foi rodado com 100 iterações<br>
+
 O *DLA_2D.py* é a mesma implementação do *DLA_teste.py* só que imprimindo as coordenadas no 2D em forma de circulos. Ele foi um dos primeiros códigos do DLA a ser dsenvolvidos, e por isso não gera resultados relevantes.
 
 O script *Square patterns DLA.ipynb*, é o código com os parâmetros que me permitem gerar designs quadradinhos e ramificados do DLA. 
 
 *Processamento DLA e DLA_circle.ipynb* apresenta o código do *Cool_patterns.ipynb* mais algumas funções adicionais para rodar o DLA com um circulo de pontos fixos. Neste caso, ao invés das bolinhas serem geradas aleatoriamente em diferentes posições, todas são geradas no centro e então caminham aleatóriamente até colidir em alguma das bolinhas do circulo. Neste código foram adiconadas algumas funções que permitem visualizar o design através do matplotlib.
 
+*Processamento DLA_teste.ipynb* é o código do *DLA_teste.py* com alguns parâmetros diferentes. Ele feito com a intenção de rodar fora do Blender.
 
 **Sugestão de Modificações**
 - [x] Criar formas em duas dimensões ao invés de três. Cool_patterns e square patterns fazem isso. Posso usa os outputs gerados com 3 dimensões e ignorar os valores de z, por exemplo.<br>
 - [ ] Construir de baixo pra cima, de cima para baixo, dentro de outras formas, contornando formas, etc.<br>
-- [x] DLA com um círculo de pontos fixos. Vide arquivo:<br>
+- [x] DLA com um círculo de pontos fixos. Vide arquivo:Processamento DLA e DLA_circle.ipynb<br>
 - [ ] Mudar o tamanho das esferas a medida que são acopladas<br>
-- [x] Adicionar textura de metal. Agora eu faço isso de maneira procedural. Vide arquivo: <br>
-- [ ] Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
-- [ ] Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
 - [x] Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
 - [ ] ~~Testar outros softwares como o Processing.~~ Desnecessário <br>
 
 
+**Observações:**<br>
+- Código bom para pingentes, brincos, aneis, etc. Permite a co-criação entre sistema e designer
+o sistema funciona como gerador do design e o usuário pode interagir com a forma apresentada dando outros formatos, deformações, ajutes, rotações, operações de simetria, etc.<br>
+
 ## Pasta Jogo_da_vida_Code
 
-## Pasta Processamento
+**Sugestão de Modificações**
+- [x] Rodar o algoritmo em outro software que aguente mais processamento que o Blender, salvar em um arquivo os dados, e só printar o resultado no Blender<br>
 
+## print_from_file.py
+
+**Sugestão de Modificações**
+- [x] Adicionar textura de metal. Agora eu faço isso de maneira procedural.<br>
+- [ ] Adicionar acabamento de forma automática: torus para um anel, por exemplo<br>
+
+- [ ] Mudar o material de acordo com o tamanho e a medida que novas bolinhas são acopladas<br>
 
 --------------------
-
-Coisas a se testar:<br>
-	
-Observações:<br>
-	-Código bom para pingentes e brincos<br>
-	-Não consigo criar uma árvore com tamanho maior que 10<br>
-	-Posso usar mais caminhos aleatórios que estou usado<br>
-	-Não consigo aumentar muito o número de iterações, mas o código já foi rodado com 100 iterações<br>
 
 Os demais códigos se referem a um algoritmo distinto. Neles são implementados automatos celulares, mais especificamente o jogo da vida de Conway<br>
 
