@@ -6,22 +6,34 @@ O presente trabalho trata sobre como algoritmos generativos que são usados para
 ## Código
 Os códigos se encontram escritos em Python. A princípio se desenvolveu os códigos dentro do próprio Blender, mas ao notar que alguns algoritmos eram muito pesados para o Blender optou-se por desenvolver os códigos e os processamentos fora dele. E, assim, usar um script apenas para ler e printar os resultados do processamento no Blender.<br>
 
+Note que neste caso, os arquivos com extensão .py podem ser executados dentro do Blender. Enquanto os arquivos .ipynb devem ser rodados fora e então impressos no Blender.<br>
+
 ### Pasta DLA_Code
 
 Nela se encontram 4 arquivos, a saber:
 
-- *Cool_patterns.ipynb* - código com o qual eu consegui os melhores resultados pro DLA<br>
-- *DFL_2D.py* - Código inicial do DLA que imprime configurações pequenas do tabuleiro. Irrelevante.<br>
-- *DLA_teste.py* - DLA 3D, não gera desings grandes nem relevantes<br>
-- *Square patterns DLA.ipynb* - código com parametros os quais eu gero padrões ramificados DLA, mas eles ficam meio quadradinhos.<br>
+- *Cool_patterns.ipynb* <br>
+- *DLA_2D.py*<br>
+- *DLA_teste.py*<br>
+- *Square patterns DLA.ipynb*<br>
+- *Processamento DLA e DLA_circle.ipynb*<br>
 
 Os quais consistem na implementação de um algoritmo de Diffusion-Limited Aggregation<br>
 
-Sobre o script *DLA_teste.py*: ele foi escrito de modo que:
+Sobre o script *Cool_patterns.ipynb*, ele é o código com o qual eu consegui os melhores resultados para o DLA.
+
+
+Sobre o script *DLA_teste.py*: ele implementa o DLA em 3D, e não gera designs nem grandes nem relevantes. Ele foi escrito de modo que:
 
 1. A princípio se determinava um número arbitrário de interações que o algoritmo deveria rodar para obter a estrutura 3D finalizada,
 agora itera-se até que o vetor de bolinhas fixas contenha 10 elementos.<br>
 2. Foram criadas funções, que não são utilizadas, com diferentes formas(cubos, e torus) como blocos de construção da estrutura 3D ao invés de esferas <br>
+
+O *DLA_2D.py* é a mesma implementação do *DLA_teste.py* só que imprimindo as coordenadas no 2D em forma de circulos. Ele foi um dos primeiros códigos do DLA a ser dsenvolvidos, e por isso não gera resultados relevantes.
+
+O script *Square patterns DLA.ipynb*, é o código com os parâmetros que me permitem gerar designs quadradinhos e ramificados do DLA. 
+
+*Processamento DLA e DLA_circle.ipynb* apresenta o código do *Cool_patterns.ipynb* mais algumas funções adicionais para rodar o DLA com um circulo de pontos fixos. Neste caso, ao invés das bolinhas serem geradas aleatoriamente em diferentes posições, todas são geradas no centro e então caminham aleatóriamente até colidir em alguma das bolinhas do circulo. Neste código foram adiconadas algumas funções que permitem visualizar o design através do matplotlib.
 
 
 **Sugestão de Modificações**
@@ -76,7 +88,7 @@ filename = r"Path_of_file"
 exec(compile(open(filename).read(), filename, 'exec'))
 ```
 
-Referência:[How to run python script in Blender](https://learnsharewithdp.wordpress.com/2018/08/27/how-to-run-a-python-script-in-blender/)
+Referência: [How to run python script in Blender](https://learnsharewithdp.wordpress.com/2018/08/27/how-to-run-a-python-script-in-blender/)
 
 Comentários sobre os códigos do jogo da vida de Conway <br>
 Ele vai gerar uma imagem correspondente ao tabuleiro original<br>
