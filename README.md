@@ -1,8 +1,8 @@
 # Monografia
 
-Playlist de apresentação do trabalho dispionível no Youtube<br>
+Playlist de apresentação do trabalho dispionível no
 <a href="https://www.youtube.com/watch?v=ilTZ3nKNl18&list=PLNngDNiSpYllv3hIy3huurlDm0fTGYyA8" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
-</div>
+<br>
 
 ## Introdução
 O presente trabalho trata sobre como algoritmos generativos que são usados para a produção de artes plásticas e podem ser usados de maneira análoga para a criação de designs de joias. Portanto,  finalidade dos códigos aqui apresentados é implementar os algoritmos generativos responsáveis por criar o design das peças. Demonstranto, assim, o potencial que o uso destes algoritmo têm na criação de produtos exclusivos e inovadores.<br>
